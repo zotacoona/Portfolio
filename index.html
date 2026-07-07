@@ -1,557 +1,690 @@
 <!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>FRONA | Premium Cosmetic OEM/ODM Manufacturing</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-          tailwind.config = {
-            darkMode: "class",
-            theme: {
-              extend: {
-                "colors": {
-                        "surface-container-lowest": "#ffffff",
-                        "outline": "#7e7576",
-                        "on-primary-fixed": "#1b1b1b",
-                        "surface-container": "#eeeeee",
-                        "surface-container-low": "#f3f3f3",
-                        "surface-variant": "#e2e2e2",
-                        "on-tertiary-fixed": "#1b1b1b",
-                        "tertiary": "#000000",
-                        "primary-container": "#1b1b1b",
-                        "surface-tint": "#5e5e5e",
-                        "on-secondary": "#ffffff",
-                        "inverse-primary": "#c6c6c6",
-                        "on-secondary-fixed-variant": "#71314b",
-                        "surface-bright": "#f9f9f9",
-                        "inverse-on-surface": "#f1f1f1",
-                        "on-surface": "#1a1c1c",
-                        "on-primary-fixed-variant": "#474747",
-                        "error": "#ba1a1a",
-                        "surface-container-highest": "#e2e2e2",
-                        "soft-gray": "#F7F7F7",
-                        "secondary-container": "#fea8c5",
-                        "primary-fixed-dim": "#c6c6c6",
-                        "tertiary-container": "#1b1b1b",
-                        "on-error": "#ffffff",
-                        "lab-black": "#000000",
-                        "secondary-fixed": "#ffd9e3",
-                        "on-tertiary": "#ffffff",
-                        "secondary": "#8d4962",
-                        "on-primary-container": "#848484",
-                        "background": "#f9f9f9",
-                        "primary": "#000000",
-                        "surface-container-high": "#e8e8e8",
-                        "on-error-container": "#93000a",
-                        "on-surface-variant": "#4c4546",
-                        "inverse-surface": "#2f3131",
-                        "on-secondary-fixed": "#3b051f",
-                        "error-container": "#ffdad6",
-                        "on-background": "#1a1c1c",
-                        "primary-fixed": "#e2e2e2",
-                        "on-tertiary-container": "#848484",
-                        "on-tertiary-fixed-variant": "#474747",
-                        "pure-white": "#FFFFFF",
-                        "outline-variant": "#cfc4c5",
-                        "on-secondary-container": "#7a3953",
-                        "surface": "#f9f9f9",
-                        "surface-dim": "#dadada",
-                        "on-primary": "#ffffff",
-                        "tertiary-fixed-dim": "#c6c6c6",
-                        "tertiary-fixed": "#e2e2e2",
-                        "signature-pink": "#FBA6C3",
-                        "secondary-fixed-dim": "#ffb0ca"
-                },
-                "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                },
-                "spacing": {
-                        "gutter": "24px",
-                        "stack-lg": "32px",
-                        "margin-edge": "40px",
-                        "stack-sm": "8px",
-                        "stack-md": "16px",
-                        "section-gap": "120px",
-                        "unit": "4px"
-                },
-                "fontFamily": {
-                        "body-lg": ["Hanken Grotesk"],
-                        "headline-md": ["Hanken Grotesk"],
-                        "label-caps": ["Hanken Grotesk"],
-                        "button": ["Hanken Grotesk"],
-                        "display-lg": ["Hanken Grotesk"],
-                        "headline-lg": ["Hanken Grotesk"],
-                        "display-lg-mobile": ["Hanken Grotesk"],
-                        "body-md": ["Hanken Grotesk"],
-                        "headline-lg-mobile": ["Hanken Grotesk"]
-                },
-                "fontSize": {
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
-                        "button": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}]
-                }
-              },
-            },
-          }
-        </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        /* Animation Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Shimmer Effect */
-        .btn-shimmer {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-shimmer::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: skewX(-25deg);
-            transition: 0.5s;
-        }
-
-        .btn-shimmer:hover::after {
-            left: 150%;
-        }
-
-        /* Pulsing Point */
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
-        }
-
-        .pulse-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-            border-radius: 50%;
-            position: absolute;
-            animation: pulse 2s infinite;
-        }
-
-        /* Accessibility: prefers-reduced-motion */
-        @media (prefers-reduced-motion: reduce) {
-            .reveal {
-                opacity: 1 !important;
-                transform: none !important;
-                transition: none !important;
-            }
-            .btn-shimmer::after,
-            .pulse-dot {
-                animation: none !important;
-                display: none !important;
-            }
-            .group:hover {
-                transform: none !important;
-                box-shadow: none !important;
-            }
-        }
-    </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oho Son | CMF Developer & Industrial Designer</title>
+    <meta name="description" content="Portfolio of Oho Son, accomplished Industrial Designer and CMF Developer. Led projects at Amazon and Microsoft for HoloLens, Surface, Kuiper, and Mixed Reality.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden">
-<!-- TopNavBar -->
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-edge h-20 backdrop-blur-md border-b border-outline-variant dark:border-outline bg-primary text-on-primary">
-<div class="text-headline-md font-headline-md font-bold tracking-tighter dark:text-on-primary-fixed" style="color: rgb(255, 255, 255);">FRONA</div>
-<nav class="hidden md:flex items-center gap-10">
-<a class="font-label-caps text-label-caps dark:text-on-primary-fixed dark:border-on-primary-fixed text-on-primary hover:opacity-70 transition-opacity" href="#home" style="color: rgb(255, 255, 255);">Home</a>
-<a class="font-label-caps text-label-caps dark:text-on-surface-variant hover:opacity-70 transition-opacity text-on-primary" href="#services" style="color: rgb(255, 255, 255);">Services</a>
-<a class="font-label-caps text-label-caps dark:text-on-surface-variant hover:opacity-70 transition-opacity text-on-primary" href="#manufacturing" style="color: rgb(255, 255, 255);">Manufacturing</a>
-<a class="font-label-caps text-label-caps dark:text-on-surface-variant hover:opacity-70 transition-opacity text-on-primary" href="#quality" style="color: rgb(255, 255, 255);">Operation</a>
-<a class="font-label-caps text-label-caps dark:text-on-surface-variant hover:opacity-70 transition-opacity text-on-primary" href="#brands" style="color: rgb(255, 255, 255);">Brands</a>
-</nav>
-<a class="block" href="#contact"><button class="btn-shimmer px-6 py-3 font-button text-button bg-on-primary text-primary rounded hover:opacity-90 transition-opacity w-full" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">Contact Us</button></a>
-</header>
-<main class="pt-20">
-<!-- Hero Section -->
-<section class="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden" id="home">
-<div class="absolute inset-0 z-0">
-<img alt="Professional beauty photography" class="w-full h-full object-cover brightness-90 transform-gpu" id="hero-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC62M-iWDnZIVlF5aLjEsCl9RY2ZglfA6VyN5_tdrzyMdl7eOyx8e2fY9a4mSuYtn0SpAbyHy1Oiu8ojYuPk_pDrgkV4ZbV7nBjXoBSsUmTtp8v0r9c-HZFRwBKFb3tfRjBO7VIqOhgr9FDr8XZ3qjKY24SMDZjEhtvQkDIjRYgZNluvNq67V-IdSFykjfX81Q-pdxeZEi9WaiWpVJfn3gXaJ_um60Cut4555VYGLO559vo5lDppf4W4PKLuesQPvnvMHw3bm-tgoFITso"/>
-</div>
-<div class="relative z-10 px-margin-edge w-full max-w-[1280px] mx-auto reveal active">
-<div class="max-w-2xl translate-y-0 opacity-100 transition-all duration-1000 ease-out">
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 text-secondary" style="color: rgb(71, 222, 255);">당신의 상상이<br/>브랜드가 되는 순간,<br/>기획부터 완벽한 생산까지 함께합니다.</h1>
-<p class="font-body-md text-body-md text-on-surface-variant mb-10 max-w-lg">제품 기획과 디자인, 정밀한 샘플 제작, 그리고 고도의 품질관리를 통한 안정적인 대량생산 및 출고까지, 화장품 OEM/ODM의 모든 과정을 원스톱 솔루션으로 제공합니다.</p>
-</div>
-</div>
-</section>
-<!-- About / Services Section -->
-<section class="py-section-gap px-margin-edge max-w-[1280px] mx-auto" id="services">
-<div class="mb-20 reveal">
-<span class="font-label-caps text-label-caps text-outline block mb-2">SERVICES</span>
-<h2 class="font-headline-lg text-headline-lg mb-4">핵심역량 Core Competence</h2>
-<div class="h-1 w-20 bg-primary"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-<div class="group border-t border-outline-variant pt-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:bg-white/50 p-4 reveal">
-<span class="font-label-caps text-label-caps text-outline mb-4 block">01</span>
-<h3 class="font-headline-md text-headline-md mb-4 group-hover:translate-x-1 transition-transform">디자인 Design</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">트렌디한 감각과 철저한 시장 분석을 바탕으로, 소비자의 시선을 사로잡고 브랜드의 아이덴티티를 가장 완벽하게 표현하는 맞춤형 디자인을 제안합니다.</p>
-</div>
-<div class="group border-t border-outline-variant pt-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:bg-white/50 p-4 reveal">
-<span class="font-label-caps text-label-caps text-outline mb-4 block">02</span>
-<h3 class="font-headline-md text-headline-md mb-4 group-hover:translate-x-1 transition-transform">구매 Sourcing</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">오랜 노하우와 탄탄한 공급망을 통해 고품질의 원료와 부자재를 합리적인 비용으로 확보합니다. 클라이언트의 제조 원가 절감과 원활한 자급을 보장하는 우리만의 핵심 경쟁력입니다.</p>
-</div>
-<div class="group border-t border-outline-variant pt-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:bg-white/50 p-4 reveal">
-<span class="font-label-caps text-label-caps text-outline mb-4 block">03</span>
-<h3 class="font-headline-md text-headline-md mb-4 group-hover:translate-x-1 transition-transform">생산 Manufacturing</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">엄격한 가이드라인과 첨단 설비를 통해 미세한 오차도 허용하지 않습니다. 엄격한 품질 검증을 거쳐, 대량생산 시에도 언제나 균일하고 안전한 최상의 퀄리티를 유지합니다.</p>
-</div>
-<div class="group border-t border-outline-variant pt-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:bg-white/50 p-4 reveal">
-<span class="font-label-caps text-label-caps text-outline mb-4 block">04</span>
-<h3 class="font-headline-md text-headline-md mb-4 group-hover:translate-x-1 transition-transform">신속대응 Agile Response</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">제품 기획부터 최종 납품까지, 클라이언트의 피드백에 즉각적으로 반응합니다. 답답함 없는 신속하고 정확한 대응으로 제품의 출시 주기를 획기적으로 단축시킵니다.</p>
-</div>
-</div>
-</section>
-<!-- Manufacturing Section -->
-<section class="bg-surface-container-low py-section-gap overflow-hidden" id="manufacturing">
-<div class="px-margin-edge max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-20 items-center">
-<div class="flex-1 reveal">
-<img alt="Precision Manufacturing" class="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuPPhBD75UfOch2lZw1EDiZke5N_4Xeb8Cs3wOeRellhQj24wAjy79QGPMu_F4rrJOEgcnahK7dsN6VF-3mc9ySYCGpu0nPpyfO6qUgAut6Dk-j9D0Ot0GiGHm-fz0LRvIX1w3ms_B2MYLkSmkgo1-0cerO6pxQAw3bMEsYI-zuzMatG52MSB-unHWEapBUJK53gxar18dFp749_OBABi96yMOcQxcFiDOLd58QjZngtlYWTwmmsnLZudbILMgfNTmU7_uo3RlGEX5"/>
-</div>
-<div class="flex-1 reveal">
-<span class="font-label-caps text-label-caps text-outline block mb-4">MANUFACTURING</span>
-<h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg mb-8">고객맞춤형 생산</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-                    FRONA의 제조 시설은 엄격한 ISO 가이드라인을 준수하며, 모든 배치가 글로벌 안전 기준을 충족하도록 관리합니다. 소규모 스타트업을 위한 유연한 소량 생산부터 대기업을 위한 대규모 양산까지 최적화된 공정을 제공합니다.
-                </p>
-<ul class="space-y-6">
-<li class="flex gap-4 items-start group">
-<span class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform">verified</span>
-<div>
-<h4 class="font-headline-md text-headline-md text-body-md font-bold">안정적인 품질 관리</h4>
-<p class="text-on-surface-variant">원료 검사부터 공정 단계별 모니터링, 최종 출하까지 철저한 다단계 품질 테스트를 거칩니다.</p>
-</div>
-</li>
-<li class="flex gap-4 items-start group">
-<span class="material-symbols-outlined text-primary group-hover:rotate-12 transition-transform">settings_suggest</span>
-<div>
-<h4 class="font-headline-md text-headline-md text-body-md font-bold">맞춤형 생산 규모</h4>
-<p class="text-on-surface-variant">고객사의 니즈에 맞춘 유연한 최소 주문 수량(MOQ) 대응과 고효율 대량 생산 시스템을 갖추고 있습니다.</p>
-</div>
-</li>
-</ul>
-<div class="mt-10">
-<a class="inline-flex items-center gap-2 group" href="ecosystem.html">
-<span class="font-button text-button uppercase tracking-widest border-b border-primary text-primary pb-1 group-hover:opacity-70 transition-opacity">생산 에코시스템 탐색 Explore Ecosystem</span>
-<span class="material-symbols-outlined text-sm text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Quality Section -->
-<section class="py-section-gap overflow-hidden" id="quality">
-<div class="px-margin-edge max-w-[1280px] mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-<div class="order-2 lg:order-1 reveal">
-<span class="font-label-caps text-label-caps text-outline block mb-4">OPERATION</span>
-<h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg mb-8">본사 및 사업장 Facilities</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-<b class="text-primary">"상상에서 완제품까지, 가장 신속하고 완벽하게 연결되는 원스톱 인프라"</b><br/>
-                        FRONA는 서울 상암동의 본사 및 R&amp;D 센터를 중심으로 경기도 파주와 양주의 특화된 생산 기지를 유기적으로 연결하는 독자적인 네트워크 라인을 구축했습니다. 용기 제작부터 충진, 포장까지 이어지는 촘촘한 협력 시스템을 통해 제품의 완성도는 높이고 출시 기간은 획기적으로 단축합니다.
+<body>
+
+    <!-- Header / Sticky Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo" id="site-logo">
+                OHO SON<span>.CMF</span>
+            </a>
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+                <li><a href="#timeline" class="nav-link" id="nav-timeline">Journey</a></li>
+                <li><a href="#philosophy" class="nav-link" id="nav-philosophy">Philosophy</a></li>
+                <li><a href="#initiatives" class="nav-link" id="nav-initiatives">Initiatives</a></li>
+                <li><a href="#development" class="nav-link" id="nav-development">Development</a></li>
+                <li><a href="#process" class="nav-link" id="nav-process">Process & DOE</a></li>
+                <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-tagline">Industrial Design & CMF Development</span>
+            <h1 class="hero-title">Crafting the Future of Physical Tech</h1>
+            <p class="hero-desc">
+                An accomplished industrial designer with deep expertise in Color, Material, Finish (CMF) and product manufacturing. Driving design excellence from concept to mass production for Microsoft and Amazon.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary" id="hero-btn-work">View Featured Work</a>
+                <a href="#timeline" class="btn btn-secondary" id="hero-btn-journey">Read Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline Section -->
+    <section id="timeline">
+        <div class="section-header">
+            <span class="section-label">Milestones</span>
+            <h2 class="section-title">Design Journey</h2>
+        </div>
+        <div class="timeline">
+            <!-- Timeline Item 2025 -->
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2025 - Present</div>
+                    <div class="timeline-role">ID/CMF Specialist</div>
+                    <div class="timeline-company"><i class="fa-brands fa-amazon"></i> Amazon LEO</div>
+                    <p class="timeline-desc">
+                        Leading the Color, Material, and Finish (CMF) specification and development for next-generation satellite terminals and aerospace communication hardware. Bridging complex aerospace engineering constraints with clean, premium design execution.
                     </p>
-</div>
-<div class="order-1 lg:order-2 reveal">
-<div class="aspect-[3/2] overflow-hidden bg-surface-variant relative">
-<img alt="Operation Facilities Map" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmz3na5UY3gEJXNnAc7oZINpKxax9ck5tpjdiPaePiz-xAsYgT9Nq6ajD70REAr3a4O-0UG4UzXoVjyFudU9coKdaSQ4TjovSLZD_e6ckvk3ZOsw7rmDHF2hSFaAOTQxpxU570yQhUMbq4dZqCamJ2V2m0Gi4AwIF2jiPXB9VbEOspwmvXyqOUZs-Rb4sO01jy64yOseczw4KLl1ywFJumZwm86DiIb6n4rW5IACXVD5koTeEjeSotsCi5IvzLXpdrZ5AowBSGtEu7"/>
-<!-- Pulsing Markers -->
-<div class="pulse-dot" style="top: 72%; left: 74%;"></div> <!-- Seoul -->
-<div class="pulse-dot" style="top: 38%; left: 63%;"></div> <!-- Paju -->
-<div class="pulse-dot" style="top: 34%; left: 81%;"></div> <!-- Yangju -->
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Solution Brands Section -->
-<section class="py-section-gap px-margin-edge max-w-[1280px] mx-auto" id="brands">
-<div class="text-center mb-20 reveal">
-<span class="font-label-caps text-label-caps text-outline block mb-2">BRANDS</span>
-<h2 class="font-headline-lg text-headline-lg">자사 솔루션 브랜드</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-<!-- Brand Card 1 -->
-<div class="group reveal">
-<div class="aspect-[4/5] bg-surface-variant overflow-hidden mb-6 relative">
-<img alt="WEETS Brand" class="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeU1oqTSD9QQx65Up0vXLAYSHWL3o7M6oYcf59yzUUgkRUsbNBLqu2Rk3FF1bo1w0hSJ25ZN9x8SP7sHUhU8ukNhYimN3G4h3LG1_UZTtsqc2htIi_dKTeSRWsikBqrRbtZtHqjwSaDdVqZJw0jvhslaw2YjC_bKImsihd7q0w-9xUziFCSQzIYrMsioV3ozEZSRepqUuJXHzqBGBEad8Wtms1VcQfCk7Z3tpm_y2CnLF0j3dBF_J--WOgoebVDlrvmMQDvKdrECit"/>
-<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-</div>
-<h3 class="font-headline-lg text-headline-lg mb-2">위츠 WEETS</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">고농축 활성 성분의 정밀한 배합을 통해 민감한 피부의 근본적인 재생을 돕는 하이 퍼포먼스 더마 스킨케어 솔루션을 제안합니다.</p>
-<a class="inline-block border-b border-primary font-button text-button pb-1 hover:opacity-50 transition-opacity" href="weets.html">Learn More</a>
-</div>
-<!-- Brand Card 2 -->
-<div class="group reveal" style="transition-delay: 100ms;">
-<div class="aspect-[4/5] bg-surface-variant overflow-hidden mb-6 relative">
-<img alt="CLEAN&amp;BEAUTY Brand" class="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2hAfzyQ8-t3QDDc10oWUNejVy12VvrcqvrP1imsK718E1bn_T_ULNlkXfLLA0w-Ghaja3GMDRMS1oT1MA9-NYENmIYeDpKNTCeM4StJhE3KNaYzwz-RgzAHXF66unCHh2PldeAyoBPIdO4Eeagg8AfOGiAz1d_DUaBWiTCa6PUQjr4MkCnpfk2xi09gBp8TerF2k5tG_6DXTe0xnuH7nmZnBWM1xCH8RJVm7rx17QL_8ZiAGnBTGWoLPtTJKxPgHqvyFiHUcSjTq2"/>
-<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-</div>
-<h3 class="font-headline-lg text-headline-lg mb-2">씨엔비 CLEAN&amp;BEAUTY</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">식물 유래 성분의 정수를 담아 피부 자극을 극소화하고, 풍부한 탄력 에너지와 함께 피부 본연의 생기를 되찾아주는 고기능성 비건 솔루션을 제안합니다.</p>
-<a class="inline-block border-b border-primary font-button text-button pb-1 hover:opacity-50 transition-opacity" href="cleanbeauty.html">Learn More</a>
-</div>
-<!-- Brand Card 3 -->
-<div class="group reveal" style="transition-delay: 200ms;">
-<div class="aspect-[4/5] overflow-hidden mb-6 relative">
-<img alt="CURIELLE Brand - High-end Cosmetic Products" class="w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjXlC0Ycx6x5T2-o6nmni8OvFqJyT7QAe8MD-r_-X24DhsfWCi1-gBa_DEHrqAe-rBfcl7O13IJ9aotPTk-jAF0UWFv9JySY3MtAQdab21Tm8jOPOCA08FpxiL2pFPKvOeK6gVQn7-7lHcNkCaxv7W-ERqpDCW3F_-mdUwRkOT8i4x1x2b8eK-WtH-X4OkNwpFMq8XHONbWGe1YRPYkHhnJI6jVSKoMB-Rs8FVPr7oIYNa3jR20GO2yOFlYbqNyVLKxWjG-FptJUWY"/>
-<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-</div>
-<h3 class="font-headline-lg text-headline-lg mb-2">큐리엘 CURIELLE</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">생기 넘치는 피부 과학적 메커니즘을 바탕으로, 피부 본연의 신선한 자생력을 극대화하고 정교한 더마톨로지컬 솔루션을 제시합니다.</p>
-<a class="inline-block border-b border-primary font-button text-button pb-1 hover:opacity-50 transition-opacity" href="curielle.html">Learn More</a>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="bg-primary text-on-primary py-32 text-center reveal">
-<div class="max-w-4xl mx-auto px-margin-edge">
-<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8" style="color: rgb(71, 222, 255);">Ready to bring your vision to life?</h2>
-<p class="font-body-lg text-body-lg mb-12 opacity-80">Partner with Korea's most innovative OEM/ODM manufacturer today.</p>
-<a href="#contact" class="inline-block">
-<button class="btn-shimmer bg-on-primary text-primary px-12 py-5 font-button text-button hover:opacity-90 transition-all transform hover:-translate-y-1" style="background-color: rgb(71, 222, 255); color: rgb(0, 0, 0);">START YOUR PROJECT</button>
-</a>
-</div>
-</section>
-<!-- Contact Section -->
-<section class="py-section-gap bg-surface-container-low" id="contact">
-    <div class="px-margin-edge max-w-[1280px] mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <!-- Left Info Panel -->
-            <div class="reveal">
-                <span class="font-label-caps text-label-caps text-outline block mb-4">CONTACT US</span>
-                <h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg mb-8">프로젝트 문의 Contact Us</h2>
-                <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
-                    FRONA의 OEM/ODM 제조 전문가 그룹이 귀하의 상상을 브랜드로 완성해 드립니다. <br>제품 기획, 처방 개발, 부자재 소싱 및 대량 생산까지 신속하게 답변 드리겠습니다.
+                </div>
+            </div>
+            
+            <!-- Timeline Item 2020 -->
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2020 - 2024</div>
+                    <div class="timeline-role">CMF & Design Quality Lead</div>
+                    <div class="timeline-company"><i class="fa-brands fa-windows"></i> Microsoft (Mixed Reality & Surface)</div>
+                    <p class="timeline-desc">
+                        Headed CMF research, material innovation, and cosmetic quality standards for Microsoft Mixed Reality devices (HoloLens 2, IVAS) and Microsoft Surface (Pro 7 / X). Spearheaded anodization line optimization, spectrophotometer color matching, and design fit verification.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2015 -->
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2015 - 2020</div>
+                    <div class="timeline-role">Senior CMF & Industrial Designer</div>
+                    <div class="timeline-company"><i class="fa-brands fa-xbox"></i> Microsoft (Xbox & Band)</div>
+                    <p class="timeline-desc">
+                        Developed tactile surface coatings, material matrices, and custom finishes for Xbox controllers, consoles, and Microsoft Band wearable devices. Focused on materials research, supplier alignment, and rapid cosmetic proof-of-concepts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2010 -->
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2010 - 2015</div>
+                    <div class="timeline-role">Industrial Designer</div>
+                    <div class="timeline-company"><i class="fa-solid fa-mobile-screen-button"></i> Microsoft / Windows Mobile & Zune</div>
+                    <p class="timeline-desc">
+                        Executed end-to-end industrial design and CMF development for Windows Mobile devices and late-generation Zune media players. Collaborated heavily with manufacturing partners on plastic injection tooling, aluminum die-casting, and paint testing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy">
+        <div class="section-header">
+            <span class="section-label">Vision</span>
+            <h2 class="section-title">Design Philosophy</h2>
+        </div>
+        <div class="pillars-grid">
+            <!-- Life Centered Design -->
+            <div class="pillar-card">
+                <span class="pillar-icon"><i class="fa-solid fa-leaf" style="color: var(--accent-anodized-bronze);"></i></span>
+                <h3 class="pillar-title">Life Centered Design</h3>
+                <p class="pillar-desc">
+                    A philosophy that views design not just through the lens of human needs, but considers the long-term impact on all forms of life and future generations. Moving beyond basic sustainability to enrich social, environmental, and emotional systems.
                 </p>
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <span class="material-symbols-outlined text-primary mt-1">location_on</span>
-                        <div>
-                            <h4 class="font-headline-md text-headline-md text-body-md font-bold">본사 및 R&D 센터 (Seoul Head Office)</h4>
-                            <p class="text-on-surface-variant">서울특별시 마포구 성암로 189 (상암동, R&D타워 12층)</p>
-                        </div>
+            </div>
+            
+            <!-- Object -->
+            <div class="pillar-card">
+                <span class="pillar-icon"><i class="fa-solid fa-cube" style="color: var(--accent-anodized-bronze);"></i></span>
+                <h3 class="pillar-title">The Object</h3>
+                <p class="pillar-desc">
+                    Every object is approached not merely as a decorative tool, but as a holistic experience defined by its visual, tactile, and functional qualities. The object becomes memorable and desirable through carefully developed colors, materials, and textures.
+                </p>
+            </div>
+
+            <!-- Experience -->
+            <div class="pillar-card">
+                <span class="pillar-icon"><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-anodized-bronze);"></i></span>
+                <h3 class="pillar-title">The Experience</h3>
+                <p class="pillar-desc">
+                    Products are built around user interactions, spanning the first visual impression, ergonomics, durability, and emotional connection over time. This ensures the product consistently fulfills user expectations and enhances daily life.
+                </p>
+            </div>
+        </div>
+
+        <!-- ID & CMF Collaboration Story Block -->
+        <div class="story-block">
+            <div class="story-img-container">
+                <img src="assets/image13.png" alt="ID and CMF Design Story & Palette Alignment" class="zoomable-img">
+            </div>
+            <div class="story-text">
+                <h3>Crafting a Compelling Story</h3>
+                <p>
+                    Storytelling is the bridge between raw engineering and human emotion. Working closely with the Industrial Design team, a CMF scheme and palette are built to align material choices with overall product goals and business objectives.
+                </p>
+                <p>
+                    Open conversations and shared perspective help CMF and ID teams make sure that color and finish decisions boost the product's visual appeal while also supporting its strategic launch objectives in the market.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section id="initiatives">
+        <div class="section-header">
+            <span class="section-label">Research & Strategy</span>
+            <h2 class="section-title">Color & Material Initiatives</h2>
+        </div>
+        <div class="story-block" style="grid-template-columns: 1.2fr 1fr; margin-top: 0;">
+            <div class="story-text">
+                <h3>Color & Material Standardization</h3>
+                <p>
+                    Establishing military and aerospace level color systems ensures precision across multiple manufacturing plants. Working with standards like **AMS STD 595A** (U.S. color standard for government and military procurement) allows for strict control of color boundaries under varying light sources.
+                </p>
+                <p>
+                    Our data-driven color match workflows employ spectrophotometer data collection, assessing L*a*b* values to establish acceptable delta-E ranges for production anodization on machined aluminum.
+                </p>
+                <ul class="spec-list">
+                    <li>Spectrophotometer calibration & L*a*b* tolerance mapping</li>
+                    <li>AMS STD 595A color alignment for government procurement</li>
+                    <li>Cosmetic anodization thickness and reflectivity controls</li>
+                </ul>
+            </div>
+            <div class="story-img-container" style="height: 350px;">
+                <img src="assets/image14.jpg" alt="AMS STD 595A Military Color Standards" class="zoomable-img">
+            </div>
+        </div>
+
+        <div class="pillars-grid" style="margin-top: 3rem; margin-bottom: 0;">
+            <!-- Color Match -->
+            <div class="pillar-card" style="padding: 2rem;">
+                <div class="tab-media-wrapper" style="aspect-ratio: 16/9; margin-bottom: 1.5rem;">
+                    <img src="assets/image15.png" alt="Color Evaluation and Spectrophotometer Testing" class="zoomable-img">
+                </div>
+                <h3 class="pillar-title" style="font-size: 1.2rem;">Spectrophotometer Color Match</h3>
+                <p class="pillar-desc" style="font-size: 0.9rem;">
+                    Executing exact color evaluation and digital data collection. Capturing spectral curves to prevent metamerism issues across different light conditions (D65, TL84, A).
+                </p>
+            </div>
+
+            <!-- Anodization QA -->
+            <div class="pillar-card" style="padding: 2rem;">
+                <div class="tab-media-wrapper" style="aspect-ratio: 16/9; margin-bottom: 1.5rem;">
+                    <img src="assets/image16.png" alt="Anodization Quality Assessment on CNC Aluminum" class="zoomable-img">
+                </div>
+                <h3 class="pillar-title" style="font-size: 1.2rem;">Anodization Assessment</h3>
+                <p class="pillar-desc" style="font-size: 0.9rem;">
+                    Testing cosmetic anodization on machined premium aluminum substrates. Balancing chemical bath time, temperature, and dye concentration for a repeatable metallic finish.
+                </p>
+            </div>
+
+            <!-- Material Discovery -->
+            <div class="pillar-card" style="padding: 2rem;">
+                <div class="tab-media-wrapper" style="aspect-ratio: 16/9; margin-bottom: 1.5rem;">
+                    <img src="assets/image19.png" alt="CMF Prototyping and Material Geometry Verification" class="zoomable-img">
+                </div>
+                <h3 class="pillar-title" style="font-size: 1.2rem;">CMF Prototyping</h3>
+                <p class="pillar-desc" style="font-size: 0.9rem;">
+                    Translating concepts into tangible prototypes with actual part geometries. Crucial to verify paint flow, texture density, and prevent handoff issues with factories.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Section (Interactive Tabs) -->
+    <section id="development">
+        <div class="section-header">
+            <span class="section-label">Engineering the Details</span>
+            <h2 class="section-title">CMF Development Journey</h2>
+        </div>
+
+        <div class="tabs-container">
+            <nav class="tab-nav">
+                <button class="tab-btn active" data-tab="tab-3dprint" id="btn-tab-3dprint">Aluminum 3D Print</button>
+                <button class="tab-btn" data-tab="tab-diecast" id="btn-tab-diecast">Aluminum Die-Cast</button>
+                <button class="tab-btn" data-tab="tab-coating" id="btn-tab-coating">Powder Coating</button>
+                <button class="tab-btn" data-tab="tab-matrix" id="btn-tab-matrix">Material Matrix</button>
+            </nav>
+
+            <!-- Tab: 3D Print -->
+            <div class="tab-pane active" id="tab-3dprint">
+                <div class="tab-content-grid">
+                    <div class="tab-text">
+                        <span class="pane-label">Additive Manufacturing</span>
+                        <h3>Structural Aluminum 3D Printing</h3>
+                        <p>
+                            3D printing with aluminum allows for complex organic structures and internal geometries that are impossible to machine or cast. During this initiative, we analyzed structural support layouts, laser sintering heat distributions, and post-processing steps.
+                        </p>
+                        <p>
+                            We verified surface roughness and executed design fit checks of sintered parts to confirm cosmetic validity for high-end technology enclosures.
+                        </p>
+                        <ul class="spec-list">
+                            <li>Laser Powder Bed Fusion (LPBF) processing</li>
+                            <li>Post-sintering surface finishing (bead blast, polish)</li>
+                            <li>Support structure optimization to prevent warping</li>
+                        </ul>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <span class="material-symbols-outlined text-primary mt-1">factory</span>
-                        <div>
-                            <h4 class="font-headline-md text-headline-md text-body-md font-bold">파주 스마트 팩토리 (Paju Smart Factory)</h4>
-                            <p class="text-on-surface-variant">경기도 파주시 탄현면 평화로 530</p>
+                    <div class="tab-gallery">
+                        <div class="tab-media-wrapper">
+                            <img src="assets/image21.png" alt="3D Printed Aluminum with Structural Supports" class="zoomable-img">
                         </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <span class="material-symbols-outlined text-primary mt-1">mail</span>
-                        <div>
-                            <h4 class="font-headline-md text-headline-md text-body-md font-bold">이메일 문의 (Contact Email)</h4>
-                            <p class="text-on-surface-variant">partner@frona-corp.com</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <span class="material-symbols-outlined text-primary mt-1">schedule</span>
-                        <div>
-                            <h4 class="font-headline-md text-headline-md text-body-md font-bold">운영 시간 (Business Hours)</h4>
-                            <p class="text-on-surface-variant">월요일 - 금요일: 09:00 - 18:00 (주말 및 공휴일 휴무)</p>
+                        <div class="tab-media-wrapper">
+                            <img src="assets/image22.png" alt="Critical Design Fit and Tolerance Check" class="zoomable-img">
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Right Form Panel -->
-            <div class="reveal">
-                <div class="bg-surface-container-lowest p-8 md:p-12 border border-outline-variant rounded">
-                    <form id="contact-form" class="space-y-6">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label for="client-name" class="block font-label-caps text-label-caps text-on-surface-variant mb-2">성함 / 담당자명 Name</label>
-                                <input type="text" id="client-name" name="name" required class="w-full px-4 py-3 bg-surface border border-outline-variant text-on-surface focus:outline-none focus:border-primary rounded transition-colors">
-                            </div>
-                            <div>
-                                <label for="company-name" class="block font-label-caps text-label-caps text-on-surface-variant mb-2">회사명 Company Name</label>
-                                <input type="text" id="company-name" name="company" class="w-full px-4 py-3 bg-surface border border-outline-variant text-on-surface focus:outline-none focus:border-primary rounded transition-colors">
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label for="client-email" class="block font-label-caps text-label-caps text-on-surface-variant mb-2">이메일 Email</label>
-                                <input type="email" id="client-email" name="email" required class="w-full px-4 py-3 bg-surface border border-outline-variant text-on-surface focus:outline-none focus:border-primary rounded transition-colors">
-                            </div>
-                            <div>
-                                <label for="client-phone" class="block font-label-caps text-label-caps text-on-surface-variant mb-2">연락처 Phone Number</label>
-                                <input type="tel" id="client-phone" name="phone" required class="w-full px-4 py-3 bg-surface border border-outline-variant text-on-surface focus:outline-none focus:border-primary rounded transition-colors">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="inquiry-type" class="block font-label-caps text-label-caps text-on-surface-variant mb-2">문의 유형 Inquiry Type</label>
-                            <select id="inquiry-type" name="type" class="w-full px-4 py-3 bg-surface border border-outline-variant text-on-surface focus:outline-none focus:border-primary rounded transition-colors appearance-none">
-                                <option value="oem-odm">화장품 OEM/ODM 제조 문의</option>
-                                <option value="partnership">브랜드 파트너십</option>
-                                <option value="sourcing">대량 구매 / 벌크 소싱</option>
-                                <option value="other">기타 문의</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="client-message" class="block font-label-caps text-label-caps text-on-surface-variant mb-2">문의 내용 Message</label>
-                            <textarea id="client-message" name="message" rows="4" required class="w-full px-4 py-3 bg-surface border border-outline-variant text-on-surface focus:outline-none focus:border-primary rounded transition-colors resize-none"></textarea>
-                        </div>
-                        <div class="flex items-center">
-                            <input type="checkbox" id="privacy-agree" required class="w-4 h-4 text-primary border-outline-variant focus:ring-0 rounded">
-                            <label for="privacy-agree" class="ml-2 text-sm text-on-surface-variant">개인정보 수집 및 이용 동의 (필수)</label>
-                        </div>
-                        <button type="submit" class="btn-shimmer w-full py-4 bg-primary text-on-primary font-button text-button uppercase hover:opacity-90 transition-opacity rounded">프로젝트 시작하기 Submit Request</button>
-                    </form>
-                    <!-- Form Success Message -->
-                    <div id="form-success" class="hidden text-center py-12 space-y-6">
-                        <span class="material-symbols-outlined text-6xl text-primary">check_circle</span>
-                        <h3 class="font-headline-md text-headline-md text-primary">문의가 성공적으로 전송되었습니다!</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant max-w-sm mx-auto">
-                            보내주신 문의 사항은 담당 전문가가 검토 후 빠른 시일 내에 이메일 또는 연락처로 연락 드리겠습니다.
+
+            <!-- Tab: Die Cast -->
+            <div class="tab-pane" id="tab-diecast">
+                <div class="tab-content-grid">
+                    <div class="tab-text">
+                        <span class="pane-label">Substrate Engineering</span>
+                        <h3>Aluminum Die-Casting</h3>
+                        <p>
+                            For high-volume structural components, aluminum die-casting provides a cost-effective, high-strength solution. However, cosmetic out-of-tool substrates often present defects like swirl marks, flow lines, and porosity.
                         </p>
-                        <button id="reset-form-btn" class="px-6 py-2 border border-primary text-primary font-button text-button rounded hover:bg-primary hover:text-on-primary transition-all">새 문의 작성하기</button>
+                        <p>
+                            Our work focuses on perfecting the tool gating system and applying specialized surface primers and powder coated finishes to completely mask casting blemishes.
+                        </p>
+                        <ul class="spec-list">
+                            <li>Out-of-tool substrate defect characterization</li>
+                            <li>High-pressure die-cast tool gate optimization</li>
+                            <li>Cosmetic coverage verification via paint thickness</li>
+                        </ul>
+                    </div>
+                    <div class="tab-gallery-single">
+                        <div class="tab-media-wrapper">
+                            <img src="assets/image23.png" alt="Aluminum Die-Cast Out-Of-Tool Substrate Finish" class="zoomable-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Coating -->
+            <div class="tab-pane" id="tab-coating">
+                <div class="tab-content-grid">
+                    <div class="tab-text">
+                        <span class="pane-label">Surface Treatment</span>
+                        <h3>Powder Coating & Masking</h3>
+                        <p>
+                            Powder coating offers excellent resistance to scratching, impact, and chemical wear. Implementing high-yield powder coating requires optimized masking fixtures to protect electrical grounding contacts and fine threading.
+                        </p>
+                        <p>
+                            We designed custom silicone masking plugs and engineered line-hanging racks to prevent uneven spray thickness and drip defects at high line speeds.
+                        </p>
+                        <ul class="spec-list">
+                            <li>Custom high-temperature silicone masking fixtures</li>
+                            <li>Electrostatic powder spray gun angle tuning</li>
+                            <li>Thermal curing cycle oven monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="tab-gallery">
+                        <div class="tab-media-wrapper">
+                            <img src="assets/image24.png" alt="Powder Coating Line Fixtures & Hangers" class="zoomable-img">
+                        </div>
+                        <div class="tab-media-wrapper">
+                            <img src="assets/image25.png" alt="Masking Fixture and Curing Crate Setup" class="zoomable-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Matrix -->
+            <div class="tab-pane" id="tab-matrix">
+                <div class="tab-content-grid">
+                    <div class="tab-text">
+                        <span class="pane-label">Material Selection</span>
+                        <h3>Substrate Material Matrix</h3>
+                        <p>
+                            Creating a systematic substrate and surface treatment matrix forms the core of our technical documentation. We investigate how different grades of aluminum (5000, 6000, 7000 series), magnesium alloys, and polycarbonates interact with anodization, paint, or plating.
+                        </p>
+                        <p>
+                            This matrix allows engineering teams to balance mechanical stiffness, cosmetic appearance, weight, and unit cost.
+                        </p>
+                        <ul class="spec-list">
+                            <li>Cross-material surface roughness testing</li>
+                            <li>Adhesion rating (Cross-hatch tape test ASTM D3359)</li>
+                            <li>Corrosion resistance comparison (Salt spray testing)</li>
+                        </ul>
+                    </div>
+                    <div class="tab-gallery-single">
+                        <div class="tab-media-wrapper">
+                            <img src="assets/image26.jpeg" alt="Comprehensive Substrate Surface Matrix Board" class="zoomable-img">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- CMF DOE & Process Section -->
+    <section id="process">
+        <div class="section-header">
+            <span class="section-label">Validation & QA</span>
+            <h2 class="section-title">CMF Process & Design of Experiments</h2>
+        </div>
+
+        <div class="story-block" style="grid-template-columns: 1fr 1fr; margin-bottom: 4rem; margin-top: 0; padding: 2rem;">
+            <div class="story-img-container" style="height: 380px;">
+                <img src="assets/image41.png" alt="Optic CMF Test Vehicle & Design of Experiments" class="zoomable-img">
+            </div>
+            <div class="story-text">
+                <h3>Optic CMF & Material Experiments</h3>
+                <p>
+                    Advanced devices, such as virtual and mixed reality headsets, require sophisticated optic CMF characterization. We design custom "test vehicles" to analyze visible light transmission, haze, and reflectivity of glass and polymers.
+                </p>
+                <p>
+                    Using **Design of Experiments (DOE)**, we systematically evaluate factors like coating thickness, baking temperature, and pigment concentration. This ensures consistent IR (infrared) emissions and texture paint specs across production lots.
+                </p>
+                <ul class="spec-list">
+                    <li>Visible light transmission & reflectivity spectroscopy</li>
+                    <li>IR emissive texture paint formulation</li>
+                    <li>Systematic DOE factor analysis to isolate defects</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="qa-grid">
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-clipboard-check" style="color: var(--accent-anodized-bronze); margin-right: 0.5rem;"></i> Cosmetic Quality Defect Severity Matrix</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quality Level</th>
+                                <th>Assessment</th>
+                                <th>Defect Severity</th>
+                                <th>Engineering Build Use</th>
+                                <th>Key Remarks & Specs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Level 1 (OK)</strong></td>
+                                <td><span class="badge badge-pass">Pass</span></td>
+                                <td>No defect</td>
+                                <td>Yes</td>
+                                <td>Meets all ID/CMF cosmetic expectations. Pass through cosmetic spec.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Level 2 (NG)</strong></td>
+                                <td><span class="badge badge-fail">Fail</span></td>
+                                <td>Minor </td>
+                                <td>Waiver upon Approval</td>
+                                <td>Minor scratches or micro-particles inside non-critical viewing areas (Class B/C surfaces).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Level 3 (NG)</strong></td>
+                                <td><span class="badge badge-fail">Fail</span></td>
+                                <td>Moderate</td>
+                                <td>Waiver upon Approval</td>
+                                <td>Visible flow marks, paint runs, or structural anodization discoloration on Class A surfaces.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Level 4 (NG)</strong></td>
+                                <td><span class="badge badge-fail">Fail</span></td>
+                                <td>Critical</td>
+                                <td>No</td>
+                                <td>Peeling coat, bubbling paint, cracked substrate, or out-of-tolerance dimensions. Rejection required.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Documentation Gallery -->
+            <div style="margin-top: 2rem;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-file-pdf" style="color: var(--accent-anodized-bronze); margin-right: 0.5rem;"></i> ID / CMF Cosmetic Quality Specifications</h3>
+                <div class="pillars-grid" style="grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                    <div class="tab-media-wrapper">
+                        <img src="assets/image44.png" alt="CMF Specification: Anodization Color Boundaries" class="zoomable-img">
+                    </div>
+                    <div class="tab-media-wrapper">
+                        <img src="assets/image45.png" alt="CMF Specification: Textured Paint Defect Limits" class="zoomable-img">
+                    </div>
+                    <div class="tab-media-wrapper">
+                        <img src="assets/image46.png" alt="CMF Specification: Glass Coating Transmission Specs" class="zoomable-img">
+                    </div>
+                    <div class="tab-media-wrapper">
+                        <img src="assets/image47.png" alt="CMF Specification: Surface Defect Classification Zones" class="zoomable-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Featured Work Section -->
+    <section id="projects">
+        <div class="section-header">
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title">Featured Deliverables</h2>
+        </div>
+        
+        <div class="works-grid">
+            <!-- Project 1: Amazon LEO -->
+            <div class="work-card">
+                <div class="work-img-wrapper">
+                    <img src="assets/image51.jpg" alt="Amazon LEO Satellite Terminal CMF Design">
+                    <div class="work-overlay">
+                        <span class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-company">Amazon</span>
+                    <h3 class="work-title">LEO (Satellite Network)</h3>
+                    <p class="work-desc">
+                        Full CMF specification for Amazon LEO satellite ground terminals, focusing on high-durability coatings for extreme weather environments.
+                    </p>
+                    <div class="work-tags">
+                        <span class="work-tag">Outdoor Powder Coat</span>
+                        <span class="work-tag">UV Resistance</span>
+                        <span class="work-tag">Aerospace Specs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Microsoft IVAS -->
+            <div class="work-card">
+                <div class="work-img-wrapper">
+                    <img src="assets/image52.jpg" alt="Microsoft IVAS Augmented System Rugged CMF">
+                    <div class="work-overlay">
+                        <span class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-company">Microsoft</span>
+                    <h3 class="work-title">IVAS (Mixed Reality)</h3>
+                    <p class="work-desc">
+                        Integrated Visual Augmentation System ruggedized headset CMF, meeting harsh military environmental and infrared stealth signature standards.
+                    </p>
+                    <div class="work-tags">
+                        <span class="work-tag">Ruggedized Polymer</span>
+                        <span class="work-tag">IR Emissive Paint</span>
+                        <span class="work-tag">MIL-Spec & Color</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: HoloLens 2 -->
+            <div class="work-card">
+                <div class="work-img-wrapper">
+                    <img src="assets/image53.jpeg" alt="Microsoft HoloLens 2 CMF & Ergonomic Materials">
+                    <div class="work-overlay">
+                        <span class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-company">Microsoft</span>
+                    <h3 class="work-title">HoloLens 2</h3>
+                    <p class="work-desc">
+                        CMF and ergonomic material integration for Microsoft's flagship mixed reality device. Balancing front-to-back weight distribution via advanced carbon fiber.
+                    </p>
+                    <div class="work-tags">
+                        <span class="work-tag">Carbon Fiber</span>
+                        <span class="work-tag">Alcantara Fabric</span>
+                        <span class="work-tag">Soft-Touch Paint</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Surface Pro 7 / X -->
+            <div class="work-card">
+                <div class="work-img-wrapper">
+                    <img src="assets/image54.jpeg" alt="Microsoft Surface Pro 7 / X Premium Anodized Chassis">
+                    <div class="work-overlay">
+                        <span class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-company">Microsoft</span>
+                    <h3 class="work-title">Surface Pro 7 / X</h3>
+                    <p class="work-desc">
+                        Magnesium chassis surface finish development, leading precision anodization and color boundary setups for Platinum and Matte Black editions.
+                    </p>
+                    <div class="work-tags">
+                        <span class="work-tag">Anodized Magnesium</span>
+                        <span class="work-tag">Matte Black Coat</span>
+                        <span class="work-tag">Color Boundary</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: HoloLens 1 -->
+            <div class="work-card">
+                <div class="work-img-wrapper">
+                    <img src="assets/image4.png" alt="Microsoft HoloLens 1 Original CMF & Light Guides">
+                    <div class="work-overlay">
+                        <span class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-company">Microsoft</span>
+                    <h3 class="work-title">HoloLens (Gen 1)</h3>
+                    <p class="work-desc">
+                        Developed the original glass coating reflectivity index and frame polymer cosmetic specifications for the world's first untethered holographic headset.
+                    </p>
+                    <div class="work-tags">
+                        <span class="work-tag">Optical Coatings</span>
+                        <span class="work-tag">High-Gloss Finish</span>
+                        <span class="work-tag">Glass Optics</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Microsoft Band -->
+            <div class="work-card">
+                <div class="work-img-wrapper">
+                    <img src="assets/image8.png" alt="Microsoft Band Wearable Elastomer Materials">
+                    <div class="work-overlay">
+                        <span class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-company">Microsoft</span>
+                    <h3 class="work-title">Microsoft Band</h3>
+                    <p class="work-desc">
+                        Tested and qualified hypoallergenic thermal plastic elastomers (TPE) and moisture-resistant battery strap coatings for fitness wearables.
+                    </p>
+                    <div class="work-tags">
+                        <span class="work-tag">Biocompatible TPE</span>
+                        <span class="work-tag">Sweat Resistance</span>
+                        <span class="work-tag">Overmolding</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7: Xbox Consoles & Controllers -->
+            <div class="work-card">
+                <div class="work-img-wrapper">
+                    <img src="assets/image9.png" alt="Microsoft Xbox Controller Textures & Plastics">
+                    <div class="work-overlay">
+                        <span class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-company">Microsoft</span>
+                    <h3 class="work-title">Xbox Hardware</h3>
+                    <p class="work-desc">
+                        Formulated laser-etched grip textures on injection molded ABS plastics for Xbox wireless controllers, ensuring long-term wear resistance.
+                    </p>
+                    <div class="work-tags">
+                        <span class="work-tag">Laser Texturing</span>
+                        <span class="work-tag">ABS Color Match</span>
+                        <span class="work-tag">Abrasion Test</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: Windows Mobile -->
+            <div class="work-card">
+                <div class="work-img-wrapper">
+                    <img src="assets/image3.png" alt="Microsoft Lumia and Windows Mobile Shell Finishes">
+                    <div class="work-overlay">
+                        <span class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <span class="work-company">Microsoft</span>
+                    <h3 class="work-title">Windows Mobile</h3>
+                    <p class="work-desc">
+                        Coordinated dual-shot polycarbonate molding and matte-finish UV coatings for Windows Phone Lumia series back covers.
+                    </p>
+                    <div class="work-tags">
+                        <span class="work-tag">Dual-Shot Injection</span>
+                        <span class="work-tag">UV Matte Finish</span>
+                        <span class="work-tag">Polycarbonate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal Container -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close Preview">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img">
+            <div class="lightbox-caption"></div>
+        </div>
     </div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-section-gap px-margin-edge flex flex-col md:flex-row justify-between items-start gap-stack-lg max-w-[1280px] mx-auto border-t border-outline-variant dark:border-outline bg-surface-container-lowest" id="footer">
-<div class="max-w-xs">
-<div class="text-headline-md font-headline-md font-bold text-primary dark:text-on-primary-fixed mb-6">FRONA</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-            Global leader in cosmetic research and manufacturing. Innovation driven by science, delivered with style.
-        </p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-2 gap-20">
-<div>
-<span class="font-label-caps text-label-caps text-primary mb-6 block">EXPLORE</span>
-<ul class="space-y-4">
-<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Our Lab</a></li>
-<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Case Studies</a></li>
-<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Global Partners</a></li>
-<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Office Locations</a></li>
-</ul>
-</div>
-<div>
-<span class="font-label-caps text-label-caps text-primary mb-6 block">LEGAL</span>
-<ul class="space-y-4">
-<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-</ul>
-</div>
-</div>
-<div class="w-full md:w-auto border-t md:border-t-0 pt-8 md:pt-0">
-<p class="font-body-md text-body-md text-on-surface-variant">
-            © 2026 FRONA International. All Rights Reserved.
-        </p>
-</div>
-</footer>
-<script>
-    // 1. Intersection Observer for Entrance Animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
 
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, observerOptions);
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#home" class="footer-logo">OHO SON<span>.CMF</span></a>
+                <p class="footer-desc">
+                    Designing at the intersection of sensory aesthetics and industrial manufacturing. Standardizing color, qualifying materials, and establishing quality control specifications for top-tier hardware products.
+                </p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-link-group">
+                    <h4>Navigation</h4>
+                    <ul class="footer-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#timeline">Journey</a></li>
+                        <li><a href="#philosophy">Philosophy</a></li>
+                        <li><a href="#initiatives">Initiatives</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-group">
+                    <h4>Processes</h4>
+                    <ul class="footer-list">
+                        <li><a href="#development">CMF Development</a></li>
+                        <li><a href="#process">Process & DOE</a></li>
+                        <li><a href="#projects">Deliverables</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-group">
+                    <h4>Contact & Profiles</h4>
+                    <ul class="footer-list">
+                        <li><a href="mailto: designeroho@hotmail.com"><i class="fa-solid fa-envelope"></i> Send Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/ohoson/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://zotacoona.github.io/Portfolio" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Oho Son. All Rights Reserved.</p>
+            <p>Designed with Antigravity</p>
+        </div>
+    </footer>
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // 2. Hero Parallax Effect
-    const heroBg = document.getElementById('hero-bg');
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        if (heroBg) {
-            heroBg.style.transform = `translateY(${scrolled * 0.4}px)`;
-        }
-    });
-
-    // 3. Smooth Scroll Enhancement
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // 4. Contact Form Handler
-    const contactForm = document.getElementById('contact-form');
-    const formSuccess = document.getElementById('form-success');
-    const resetFormBtn = document.getElementById('reset-form-btn');
-
-    if (contactForm && formSuccess) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            contactForm.classList.add('hidden');
-            formSuccess.classList.remove('hidden');
-        });
-    }
-
-    if (resetFormBtn && contactForm && formSuccess) {
-        resetFormBtn.addEventListener('click', () => {
-            contactForm.reset();
-            formSuccess.classList.add('hidden');
-            contactForm.classList.remove('hidden');
-        });
-    }
-
-    // Handle initial reveal for hero on load
-    window.addEventListener('load', () => {
-        document.querySelectorAll('.reveal').forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight) {
-                el.classList.add('active');
-            }
-        });
-    });
-</script>
-</body></html>
+    <script src="script.js"></script>
+</body>
+</html>
