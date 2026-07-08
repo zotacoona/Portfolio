@@ -845,11 +845,10 @@ tr:hover td {
 /* Lightbox Modal */
 .lightbox {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: rgba(6, 8, 10, 0.95);
+    background: rgba(6, 8, 10, 0.97);
     z-index: 2000;
     display: none;
     justify-content: center;
@@ -866,18 +865,23 @@ tr:hover td {
 
 .lightbox-content {
     position: relative;
-    max-width: 90%;
-    max-height: 80vh;
+    width: min(94vw, 1400px);
+    height: min(92vh, 900px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem 3rem;
     box-shadow: 0 10px 50px rgba(0,0,0,0.8);
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 6px;
     overflow: hidden;
+    background: rgba(10, 12, 16, 0.96);
 }
 
 .lightbox-img {
     display: block;
-    max-width: 100%;
-    max-height: 80vh;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 

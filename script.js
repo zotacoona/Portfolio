@@ -82,14 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxCaption = lightbox.querySelector('.lightbox-caption');
     const lightboxClose = lightbox.querySelector('.lightbox-close');
     
-    // Select all images that can be expanded
-    const triggers = document.querySelectorAll('.zoomable-img, .work-img-wrapper img, .tab-media-wrapper img, .story-img-container img');
+    // Select all image containers and images that can be expanded
+    const triggers = document.querySelectorAll('.zoomable-img, .work-img-wrapper, .tab-media-wrapper, .story-img-container');
     
-    triggers.forEach(img => {
+    triggers.forEach(trigger => {
+        const img = trigger.tagName === 'IMG' ? trigger : trigger.querySelector('img');
+        if (!img) return;
+
         // Ensure cursor points to expand option
-        img.style.cursor = 'zoom-in';
+        trigger.style.cursor = 'zoom-in';
         
-        img.addEventListener('click', (e) => {
+        trigger.addEventListener('click', (e) => {
             e.stopPropagation();
             const src = img.getAttribute('src');
             const caption = img.getAttribute('alt') || 'Portfolio Asset Preview';
